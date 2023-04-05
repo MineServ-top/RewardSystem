@@ -10,10 +10,27 @@ module.exports = {
             database: conf.MySQL.Database
         })
         connection.connect()
-        connection.query(conf.MySQL.SQL_Query.replaceAll('$user',user), function (error, results, fields){
-            if (error) throw error
-            console.log(time+" | Edit DB | Success!")
-        })
+        if(conf.MySQL.SQL_Query1 !== false){
+            console.log(time+" | Running SQL Query | "+conf.MySQL.SQL_Query1.replaceAll('$user',user))
+            connection.query(conf.MySQL.SQL_Query1.replaceAll('$user',user), function (error, results, fields){
+                if (error) throw error
+                console.log(time+" | Edit DB | Success!")
+            })
+        }
+        if(conf.MySQL.SQL_Query2 !== false){
+            console.log(time+" | Running SQL Query | "+conf.MySQL.SQL_Query2.replaceAll('$user',user))
+            connection.query(conf.MySQL.SQL_Query2.replaceAll('$user',user), function (error, results, fields){
+                if (error) throw error
+                console.log(time+" | Edit DB | Success!")
+            })
+        }
+        if(conf.MySQL.SQL_Query3 !== false){
+            console.log(time+" | Running SQL Query | "+conf.MySQL.SQL_Query3.replaceAll('$user',user))
+            connection.query(conf.MySQL.SQL_Query3.replaceAll('$user',user), function (error, results, fields){
+                if (error) throw error
+                console.log(time+" | Edit DB | Success!")
+            })
+        }
         connection.end()
     }
 }

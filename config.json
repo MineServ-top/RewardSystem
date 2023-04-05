@@ -1,26 +1,29 @@
 {
     "Method": "RCon",
-    "WebServerPort": "8080",
+    "WebServerPort": "80",
     "SecretKey": "",
     "RCon": {
-        "IP":"localhost",
-        "Port":"25575",
-        "Password":"minecraft",
-        "Command1":"give $user diamond",
-        "Command2":"null",
-        "Command3":"null"
+        "IP": "localhost",
+        "Port": "25575",
+        "Password": "minecraft",
+        "Command1": "give $user diamond",
+        "Command2": false,
+        "Command3": false
     },
     "MySQL": {
-        "IP":"localhost",
-        "Username":"root",
-        "Password":"minecraft",
-        "Database":"base1",
-        "SQL_Query":"UPDATE `iconomy` SET `balance`=`balance`+100 WHERE `username`='$user'"
+        "IP": "localhost",
+        "Username": "root",
+        "Password": "minecraft",
+        "Database": "base1",
+
+        "SQL_Query1": "UPDATE `iconomy` SET `balance`=`balance`+100 WHERE `username`='$user'",
+        "SQL_Query2": false,
+        "SQL_Query3": false
     },
     "LiteLoader": {
-        "Command1":"give $user diamond",
-        "Command2":"null",
-        "Command3":"null"
+        "Command1": "give $user diamond",
+        "Command2": false,
+        "Command3": false
     },
     "Custom": {
     }
